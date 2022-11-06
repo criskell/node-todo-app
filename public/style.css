@@ -1,0 +1,79 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	font-family: "Open Sans", sans-serif;
+	color: #333;
+}
+
+main {
+	width: 80vw;
+	margin: 5% auto;
+}
+
+header {
+	border-bottom: 1px #eee solid;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.todo-list {
+	list-style-type: none;
+}
+
+.todo-list li {
+	padding: 15px;
+	border-bottom: 1px #eee solid;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.todo-list li form {
+	display: contents;
+}
+
+.btn {
+	padding: 15px;
+	font: inherit;
+	border: none;
+	cursor: pointer;
+	text-decoration: none;
+}
+
+.todo-form {
+	margin-top: 20px;
+}
+
+.todo-form div {
+	margin-bottom: 20px;
+}
+
+.todo-form input, .todo-form select {
+    width: 100%;
+    min-height: 45px;
+    font: inherit;
+    border: 1px #eee solid;
+    border-radius: 5px;
+    padding: 15px;
+}
+
+.todo-form select {
+	cursor: pointer;
+}
+
+.errors {
+	margin-bottom: 20px;
+	border: 1px solid #eee;
+	background: #eee;
+	border-radius: 5px;
+	padding: 15px;
+}
+
+.errors ul {
+	list-style-position: inside;
+}

@@ -1,0 +1,35 @@
+{% extends "layout.njk" %}
+
+{% block buttons %}
+	<a href="/" class="btn">Lista de tarefas</a>
+{% endblock %}
+
+{% block content %}
+	<form action="{{ saveUrl }}" method="POST" class="todo-form">
+		{% if errors %}
+			<div class="errors">
+				<h1>Erros</h1>
+				<ul>
+					{% for error in errors %}
+						<li>{{ error }}</li>
+					{% endfor %}
+				</ul>
+			</div>
+		{% endif %}
+
+		<div>
+			<label>Descrição</label>
+			<input type="text" name="description" value="{{ todo.description }}">
+		</div>
+
+        <div>
+            <label>Status</label>
+            <select name="status">
+                <option value="pending" {{ "selected" if todo.status == "pending" else "" }}>Pendente</option>
+                <option value="finished" {{ "selected" if todo.status == "finished" else "" }}>Finalizado</option>
+            </select>
+        </div>
+
+		<button type="submit" class="btn">Salvar</button>
+	</form>
+{% endblock %}

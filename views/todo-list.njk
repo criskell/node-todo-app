@@ -1,0 +1,24 @@
+{% extends "layout.njk" %}
+
+{% block buttons %}
+	<a href="/create" class="btn">Criar nova tarefa</a>
+{% endblock %}
+
+{% block content %}
+	<ul class="todo-list">
+		{% for todo in todos %}
+			<li>
+				{{ todo.description }}
+
+				<div>
+					<form action="/{{ todo.id }}?_method=DELETE" method="POST">
+						<button type="submit" class="btn">Remover</button>
+					</form>
+					<form action="/{{ todo.id }}">
+						<button type="submit" class="btn">Editar</button>
+					</form>
+				</div>
+			</li>
+		{% endfor %}
+	</ul>
+{% endblock %}
